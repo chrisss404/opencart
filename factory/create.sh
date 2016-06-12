@@ -5,7 +5,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-SHOP_VERSION="2.1.0.1"
+SHOP_VERSION="2.1.0.2"
 
 build1=("5.5" "5.5")
 build2=("5.6" "5.6")
