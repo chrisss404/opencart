@@ -1,0 +1,61 @@
+php5-5:
+  build: ../images/php/5.5
+  links:
+    - mysql5-5:db
+  ports:
+    - "80:80"
+  volumes:
+    - ./workspace:/tmp/workspace
+    - ./volume-php:/var/www/html
+  env_file:
+    - shop-config.env
+  command: "bash /tmp/workspace/setup.sh"
+
+mysql5-5:
+  build: ../images/mysql/5.5
+  volumes:
+    - ./volume-mysql:/var/lib/db-data
+  env_file:
+    - shop-config.env
+
+
+php5-6:
+  build: ../images/php/5.6
+  links:
+    - mysql5-6:db
+  ports:
+    - "80:80"
+  volumes:
+    - ./workspace:/tmp/workspace
+    - ./volume-php:/var/www/html
+  env_file:
+    - shop-config.env
+  command: "bash /tmp/workspace/setup.sh"
+
+mysql5-6:
+  build: ../images/mysql/5.6
+  volumes:
+    - ./volume-mysql:/var/lib/db-data
+  env_file:
+    - shop-config.env
+
+
+php7-0:
+  build: ../images/php/7.0
+  links:
+    - mysql5-7:db
+  ports:
+    - "80:80"
+  volumes:
+    - ./workspace:/tmp/workspace
+    - ./volume-php:/var/www/html
+  env_file:
+    - shop-config.env
+  command: "bash /tmp/workspace/setup.sh"
+
+mysql5-7:
+  build: ../images/mysql/5.7
+  volumes:
+    - ./volume-mysql:/var/lib/db-data
+  env_file:
+    - shop-config.env
