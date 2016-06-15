@@ -110,6 +110,6 @@ Then run the following commands in order to get the files for the volume:
 docker-compose ps -q web
 
 # copy directory to host and set file permissions
-docker cp <continer-id>:/var/www/html ./html
+docker cp <container-id>:/var/www/html ./html
 chmod -R 0777 html
 ```
