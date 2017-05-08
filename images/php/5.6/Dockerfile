@@ -32,6 +32,12 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) mysqli \
     && rm -rf /var/lib/apt/lists/*
 
+# Install zip php extension
+RUN apt-get update && apt-get install -y \
+        zlib1g-dev \
+    && docker-php-ext-install -j$(nproc) zip \
+    && rm -rf /var/lib/apt/lists/*
+
 # Add setup/start scripts
 COPY wait_for_service.sh /wait_for_service.sh
 COPY entrypoint.sh /entrypoint.sh

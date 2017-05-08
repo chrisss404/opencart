@@ -84,6 +84,10 @@ db:
 
 To download a plugin on startup, add the environment variable `DOWNLOAD_PLUGIN=https://github.com/foo/bar/archive/master.tar.gz`.
 
+### Usage of OpenCart Extension Installer
+
+The extension installer requires a FTP service in order to upload extensions to your shop, which is not available in this setup. However the following [extension](http://www.opencart.com/index.php?route=extension/extension/info&extension_id=18892) provides a workaround for this shortcoming.
+
 ### Development
 
 To use this image for development, use subsequent `docker-compose.yml`.
